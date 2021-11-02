@@ -11,8 +11,13 @@ import Stack from '@mui/material/Stack';
 const Spa = () => {
 
     const [card, setCard] = useState([...Array(9)])
-
-
+    const [valueField, setValueField] = useState("")
+    const checkField = (text) => {
+        setValueField(text)
+    }
+    const clearField = () => {
+        setValueField("")
+    }
     return (
         <div className="Spa">
             <div className="Header">
@@ -24,8 +29,12 @@ const Spa = () => {
                 <div className="Content-search">
                    <div className="Content-search__field">
                        <SearchIcon className="Content-search__icon" width={17} height={17} style={{marginLeft: "10px"}} />
-                       <input className="Content-search__input" type="text"/>
-                       <ClearIcon width={10} height={10} />
+                       <input
+                           className="Content-search__input"
+                           type="text" value={valueField}
+                           onChange={(e) => checkField(e.target.value)}
+                           />
+                       {valueField !== "" ? <ClearIcon width={10} height={10} onClick={() => clearField()} /> : ""}
                        <button className="Content-search__btnFind">Найти</button>
                    </div>
                     <button className="Content-search__btnClose">Закрыть</button>
@@ -34,7 +43,7 @@ const Spa = () => {
 
                     <div className="Content-searchInfo">
                         <h1 className="Content-searchInfo__title">Результаты по запросу</h1>
-                        <span className="Content-searchInfo__desc">{`Показаны результаты для “Запрос пользозвателя”. Вы искали “Зопрос пользователя”.`}</span>
+                        <span className="Content-searchInfo__desc">{`Показаны результаты для ${valueField}. Вы искали ${valueField}.`}</span>
                     </div>
                     <div style={{display: "flex", marginTop: "30px"}}>
                         {[...Array(5)].map((block,index) => <div

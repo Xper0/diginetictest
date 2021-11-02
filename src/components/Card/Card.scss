@@ -1,0 +1,75 @@
+.Card{
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  transform: translateY(0);
+  transition: ease-in-out 0.3s;
+  &:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+
+
+  .Card-img{
+    width: 260px;
+    height: 260px;
+    background: #C4C4C4;
+    border-radius: 3px;
+  }
+  .Card__title{
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.01em;
+    color: #000000;
+    margin: 10px 0 18px 0;
+  }
+
+  .Cost{
+    .Cost__new{
+      font-family: Open Sans,sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 16px;
+      color: #000000;
+    }
+
+    .Cost__old{
+      margin-left: 16px;
+      font-family: Open Sans,sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      text-decoration-line: line-through;
+      color: #A9A9A9;
+    }
+  }
+
+  .Card-control{
+    width: 260px;
+    height: 40px;
+    background: #F1BD45;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 15px;
+    color: #000000;
+    outline: none;
+    border: none;
+    &:hover{
+      cursor: pointer;
+      background: #61dafb;
+    }
+  }
+
+
+}
